@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"type": "shell",
+		"label": "cl.exe build active file",
+		"command": "cl.exe",
+		"args": [
+		  "/Zi",
+		  "/Iinclude",
+		  "/I\\vcpkg\\installed\\x86-windows\\include",
+		  "example.cpp","${fileDirname}/src/\\*.cpp",
+		  "/EHsc",
+		  "/Fe:",
+		  "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+		  "/link",
+		  "D:\\vcpkg\\installed\\x86-windows\\lib\\freeglut.lib",
+		  "D:\\vcpkg\\installed\\x86-windows\\lib\\glew32.lib",
+		  "D:\\vcpkg\\installed\\x86-windows\\lib\\OpenGL32.lib",	
+		],
+		"problemMatcher": ["$msCompile"],
+		"group": {
+		  "kind": "build",
+		  "isDefault": true
+		}
+	  }
+	]
+  }
